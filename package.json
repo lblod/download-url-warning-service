@@ -1,0 +1,19 @@
+{
+  "name": "download-url-warning-service",
+  "version": "0.0.0",
+  "description": "Service that generates warning emails when url downloads failed.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lblod/download-url-warning-service.git"
+  },
+  "author": "lblod",
+  "license": "MIT",
+  "dependencies": {
+    "@lblod/mu-auth-sudo": "^0.2.0",
+    "cron": "^1.8.2"
+  }
+}
