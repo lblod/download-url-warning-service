@@ -62,7 +62,7 @@ async function checkFailedDownloads() {
     await updateStatus(jobUri, STATUS_SUCCESS);
     await updateStatus(taskUri, STATUS_SUCCESS);
   } catch (err) {
-    console.log(`An error occurred when checking messages: ${err}`);
+    console.log(`An error occurred when checking failed url downloads: ${err}`);
     await addError(jobUri, err);
     await updateStatus(jobUri, STATUS_FAILED);
     await updateStatus(taskUri, STATUS_FAILED);

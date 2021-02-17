@@ -17,7 +17,7 @@ export const EMAIL_URI_PREFIX = 'http://data.lblod.info/id/emails/';
 export const CONTAINER_URI_PREFIX = 'http://redpencil.data.gift/id/dataContainers/'
 
 export const SERVICE_NAME = 'http://lblod.data.gift/services/download-url-warning-service';
-export const JOB_OPERATION = 'http://lblod.data.gift/id/jobs/concept/JobOperation/berichtencentrumWarning';
+export const JOB_OPERATION = 'http://lblod.data.gift/id/jobs/concept/JobOperation/downloadUrlWarning';
 export const CHECK_FAILED_URL_DOWNLOADS_OPERATION = 'http://lblod.data.gift/id/jobs/concept/JobOperation/checkFailedUrlDownloads';
 
 export const PREFIXES = `
