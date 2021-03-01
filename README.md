@@ -2,6 +2,8 @@
 
 Service that generates warning emails when url downloads failed.
 
+/!\ When first added to the stack, the service might send many emails /!\
+
 ## Installation
 
 To add the service to your `mu.semte.ch` stack, add the following snippet to docker-compose.yml:
