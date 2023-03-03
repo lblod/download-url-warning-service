@@ -43,7 +43,7 @@ export const WARNING_EMAIL_TEXT = function(failedDownloads) {
   let urlInfo = '';
   failedDownloads.forEach(download => {
     urlInfo = `${urlInfo}
-- Url: ${download.url.value} | RemoteUrl : ${download.remoteUrl.value} | ${download.errorCode.value}: "${download.errorLabel.value}"`;
+- Url: ${download?.url?.value} | RemoteUrl : ${download?.remoteUrl?.value} | ${download?.errorCode?.value}: "${download?.errorLabel?.value}"`;
   });
 
   return `
@@ -61,7 +61,7 @@ export const WARNING_EMAIL_HTML = function(failedDownloads) {
   let urlInfo = '<ul>';
   failedDownloads.forEach(download => {
     urlInfo = `${urlInfo}
-<li>Url: ${download.url.value} | RemoteUrl : ${download.remoteUrl.value} | ${download.errorCode.value}: "${download.errorLabel.value}"</li>`;
+<li>Url: ${download?.url?.value} | RemoteUrl : ${download?.remoteUrl?.value} | ${download?.errorCode?.value}: "${download?.errorLabel?.value}"</li>`;
   });
   urlInfo = `${urlInfo}</ul>`;
 

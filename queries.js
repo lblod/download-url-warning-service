@@ -114,9 +114,11 @@ export async function getFailedDownloads() {
       GRAPH ?g {
         ?remoteUrl a nfo:RemoteDataObject ;
           adms:status <http://lblod.data.gift/file-download-statuses/failure> ;
-          ext:cacheError ?errorLabel ;
-          ext:httpStatusCode ?errorCode ;
           nie:url ?url .
+
+          OPTIONAL { ?remoteUrl ext:cacheError ?errorLabel. }
+          OPTIONAL { ?remoteUrl ext:httpStatusCode ?errorCode. }
+
       }
       FILTER NOT EXISTS { ?container task:hasRemoteUrl ?remoteUrl . }
     }
@@ -147,7 +149,7 @@ export async function createWarningEmail(taskUri, failedDownloads) {
       GRAPH ${sparqlEscapeUri(JOB_GRAPH)} {
         ${sparqlEscapeUri(taskUri)} task:resultsContainer ${sparqlEscapeUri(containerUri)} .
         ${urlsBlock}
-        ${sparqlEscapeUri(containerUri)} task:hasEmail ${sparqlEscapeUri(emailUri)} .     
+        ${sparqlEscapeUri(containerUri)} task:hasEmail ${sparqlEscapeUri(emailUri)} .
       }
       GRAPH ${sparqlEscapeUri(EMAIL_GRAPH)} {
         ${sparqlEscapeUri(emailUri)} a nmo:Email ;
