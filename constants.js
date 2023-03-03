@@ -40,10 +40,12 @@ export const OUTBOX = 'http://data.lblod.info/id/mail-folders/2';
 export const WARNING_EMAIL_SUBJECT = 'Failed downloads in Toezicht';
 
 export const WARNING_EMAIL_TEXT = function(failedDownloads) {
+  const checkLogsStatement = 'Please check logs for more info';
   let urlInfo = '';
   failedDownloads.forEach(download => {
     urlInfo = `${urlInfo}
-- Url: ${download?.url?.value} | RemoteUrl : ${download?.remoteUrl?.value} | ${download?.errorCode?.value}: "${download?.errorLabel?.value}"`;
+- Url: ${download?.url?.value} | RemoteUrl : ${download?.remoteUrl?.value} |
+  ${download?.errorCode?.value || checkLogsStatement }: "${download?.errorLabel?.value || checkLogsStatement}"`;
   });
 
   return `
@@ -58,10 +60,12 @@ Redpencil.io
 }
 
 export const WARNING_EMAIL_HTML = function(failedDownloads) {
+  const checkLogsStatement = 'Please check logs for more info';
   let urlInfo = '<ul>';
   failedDownloads.forEach(download => {
     urlInfo = `${urlInfo}
-<li>Url: ${download?.url?.value} | RemoteUrl : ${download?.remoteUrl?.value} | ${download?.errorCode?.value}: "${download?.errorLabel?.value}"</li>`;
+<li>Url: ${download?.url?.value} | RemoteUrl : ${download?.remoteUrl?.value} |
+  ${download?.errorCode?.value || checkLogsStatement}: "${download?.errorLabel?.value || checkLogsStatement }"</li>`;
   });
   urlInfo = `${urlInfo}</ul>`;
 
